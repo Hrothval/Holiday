@@ -146,7 +146,7 @@ namespace PublicHolidayTests
         public void Test2043()
         {
             //Constitution Day falls on the same day as the Whit Sunday holiday - Sunday 17th May 2043
-            var hols = new NorwayPublicHoliday().PublicHolidays(2043);
+            new NorwayPublicHoliday().PublicHolidays(2043);
         }
     }
 }

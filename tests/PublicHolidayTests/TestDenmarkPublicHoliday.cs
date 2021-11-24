@@ -159,7 +159,7 @@ namespace PublicHolidayTests
 
             var whitMondayName = holidays[DenmarkPublicHoliday.WhitMonday(2017)];
             Assert.IsNotNull(whitMondayName);
-            Assert.IsTrue(whitMondayName.Contains(","));
+            Assert.IsTrue(whitMondayName.Contains(','));
         }
     }
 }

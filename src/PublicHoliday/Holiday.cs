@@ -70,12 +70,26 @@ namespace PublicHoliday
         }
 
         /// <summary>
+        /// A holiday as its observed date
+        /// </summary>
+        /// <param name="h">The holiday</param>
+        /// <returns>DateTime ObservedDate</returns>
+        /// <exception cref="System.ArgumentNullException"></exception>
+        /// <remarks>For rule CA2225 ref : https://docs.microsoft.com/fr-ca/dotnet/fundamentals/code-analysis/quality-rules/ca2225</remarks>
+        public static DateTime FromHoliday(Holiday h)
+        {
+            return h == null ? throw new ArgumentNullException(nameof(h)) : h.ObservedDate;
+        }
+
+        /// <summary>
         /// Implicitly casts a holiday as its observed date
         /// </summary>
         /// <param name="h">The holiday</param>
+        /// <returns>DateTime ObservedDate</returns>
+        /// <exception cref="System.ArgumentNullException"></exception>
         public static implicit operator DateTime(Holiday h)
-        {
-            return h.ObservedDate;
+        {          
+            return FromHoliday(h);
         }
     }
 }

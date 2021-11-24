@@ -134,7 +134,7 @@ namespace PublicHolidayTests
         public void TestNextWorkingDay_ArgumentOutOfRangeException()
         {
             var datetest = new DateTime(2021, 10, 22);
-            var result = HolidayCalculator.NextWorkingDay(new PublicHolidayHelperTest(), datetest, -1);
+            HolidayCalculator.NextWorkingDay(new PublicHolidayHelperTest(), datetest, -1);
 
             Assert.Fail("Not ArgumentOutOfRangeException");
         }
@@ -186,7 +186,7 @@ namespace PublicHolidayTests
         public void TestPreviousWorkingDay_ArgumentOutOfRangeException()
         {
             var datetest = new DateTime(2021, 10, 22);
-            var result = HolidayCalculator.PreviousWorkingDay(new PublicHolidayHelperTest(), datetest, -1);
+            HolidayCalculator.PreviousWorkingDay(new PublicHolidayHelperTest(), datetest, -1);
 
             Assert.Fail("Not ArgumentOutOfRangeException");
         }

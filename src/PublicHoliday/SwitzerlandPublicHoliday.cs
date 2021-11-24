@@ -298,11 +298,11 @@ namespace PublicHoliday
 
 
         // For constructor
-        private bool _hasSecondJanuary = false;
-        private bool _hasLaborDay = false;
-        private bool _hasCorpusChristi = false;
-        private bool _hasChristmasEve = false;
-        private bool _hasNewYearsEve = false;
+        private readonly bool _hasSecondJanuary; //Default false;
+        private readonly bool _hasLaborDay; //Default false;
+        private readonly bool _hasCorpusChristi; //Default false;
+        private readonly bool _hasChristmasEve; //Default false;
+        private readonly bool _hasNewYearsEve; //Default false;
 
         /// <summary>
         /// Constructor for two major Swiss variants: 

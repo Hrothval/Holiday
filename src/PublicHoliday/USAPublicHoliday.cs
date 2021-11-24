@@ -191,7 +191,7 @@ namespace PublicHoliday
         /// </summary>
         /// <param name="year">The given year</param>
         /// <returns></returns>
-        private IList<Holiday> PublicHolidaysComplete(int year)
+        private static IList<Holiday> PublicHolidaysComplete(int year)
         {
             var bHols = new List<Holiday>();
 

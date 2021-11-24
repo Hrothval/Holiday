@@ -90,21 +90,21 @@ namespace PublicHoliday.Localization
         {
             bool Result = false;
             //Search with parameter
-            var Element = getXdocumentValue(RessourceXDocument, culture.Name, id);
+            var Element = GetXdocumentValue(RessourceXDocument, culture.Name, id);
             value = "";
 
             
             if (Element == null && culture.Name != culture.TwoLetterISOLanguageName)
             {
                 //Search with language of CultureInfo
-                Element = getXdocumentValue(RessourceXDocument, culture.TwoLetterISOLanguageName, id);
+                Element = GetXdocumentValue(RessourceXDocument, culture.TwoLetterISOLanguageName, id);
             }
 
             
             if (Element == null && culture.TwoLetterISOLanguageName != DefaultCultureInfo.TwoLetterISOLanguageName)
             {
                 //Search with default CultureInfo
-                Element = getXdocumentValue(RessourceXDocument, DefaultCultureInfo.TwoLetterISOLanguageName, id);
+                Element = GetXdocumentValue(RessourceXDocument, DefaultCultureInfo.TwoLetterISOLanguageName, id);
             }
 
             if (Element != null)
@@ -139,7 +139,7 @@ namespace PublicHoliday.Localization
         /// <param name="culture">Culture of the text to search</param>
         /// <param name="IdText">Id of the text to search</param>
         /// <returns>XElement find or null</returns>
-        private XElement getXdocumentValue(XDocument doc, string culture, string IdText)
+        private static XElement GetXdocumentValue(XDocument doc, string culture, string IdText)
         {
             var value = (from xml2 in doc.Descendants("root").Descendants(culture).Descendants(IdText)
                           select xml2).FirstOrDefault();

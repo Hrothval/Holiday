@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <VersionPrefix>1.6.0</VersionPrefix>
-    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard1.3;net35;net40;net46</TargetFrameworks>
+    <TargetFrameworks>net6.0;net5.0;netcoreapp3.1;netstandard1.3;net35;net40;net46</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>PublicHoliday</AssemblyName>
     <PackageId>PublicHoliday</PackageId>
@@ -25,7 +25,7 @@
 2.9.0: Add Localized String for class Holiday, Adding cache for Easter for performance framework 4.0+/standard1.3+ (thanks @Hrothval) Added RomanianPublicHoliday (thanks @mihaigliga21)
 2.10.0: Add in HolidayCalculator PreviousWorkingDay/NextWorkingDay with x open day, Add UseCachingHolidays with default to false in IPublicHolidays/PublicHolidayBase, Add in IsWorkingDay in IPublicHolidays, Add target .NET 5.0 (thanks @Hrothval)
 2.11.0: Add Estonia (thanks @Kaupo) Add USAFederalReserveHoliday (thanks @AndrewPecha). Add LocalizationString for France and US. Adjust framework for code section, CanadaQuebecGovClosingDay adjust holiday name for past year CanadaDay and NationalPatriotDay, HolidayCalculator PreviousWorkingDay/NextWorkingDay option ignore same day, IPublicHolidays/PublicHolidayBase add PreviousWorkingDayNotSameDay and NextWorkingDayNotSameDay, USAPublicHoliday add holiday name and standardization (thanks @Hrothval)
-2.13.0: Add .NET6/Visual Studio 2022, Correct message of code analysis </PackageReleaseNotes>
+2.13.0: Add .NET6/Visual Studio 2022, Correct message of code analysis</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/martinjw/Holiday</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
@@ -41,6 +41,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <Version>2.11.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AnalysisMode>All</AnalysisMode>
   </PropertyGroup>
   <PropertyGroup>
     <FrameworkPathOverride Condition="'$(TargetFramework)' == 'net35'">C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>

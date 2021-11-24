@@ -18,7 +18,7 @@ namespace PublicHoliday
         /// <summary>
         /// Determines whether to use the cache if available
         /// </summary>
-        public bool UseCachingHolidays { get; set; } = false;
+        public bool UseCachingHolidays { get; set; } //Default false
 
 #if NETSTANDARD1_0_OR_GREATER || NET40_OR_GREATER || NETCOREAPP1_0_OR_GREATER
         /// <summary>

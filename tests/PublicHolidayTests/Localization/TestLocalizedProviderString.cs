@@ -28,10 +28,9 @@ namespace PublicHolidayTests
         public void TestTryGetLocalizedString(string IdText, string culturestring, string valueresult, bool result, string comment)
         {
             LocalizedProviderString Local = new LocalizedProviderString(new RessourceProviderXDocumentForTest());
-            string valueActual;
             CultureInfo culture = new CultureInfo(culturestring);
 
-            bool resultActual = Local.TryGetLocalized(IdText, culture, out valueActual);
+            bool resultActual = Local.TryGetLocalized(IdText, culture, out string valueActual);
 
             Assert.AreEqual(result, resultActual, comment);
             Assert.AreEqual(valueresult, valueActual, comment);
@@ -43,9 +42,8 @@ namespace PublicHolidayTests
         public void TestTryGetLocalizedString(string IdText, string valueresult, bool result, string comment)
         {
             LocalizedProviderString Local = new LocalizedProviderString(new RessourceProviderXDocumentForTest());
-            string valueActual;
 
-            bool resultActual = Local.TryGetLocalized(IdText, out valueActual);
+            bool resultActual = Local.TryGetLocalized(IdText, out string valueActual);
 
             Assert.AreEqual(result, resultActual, comment);
             Assert.AreEqual(valueresult, valueActual, comment);

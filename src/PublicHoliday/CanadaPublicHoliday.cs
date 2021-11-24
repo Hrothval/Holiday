@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+[assembly: CLSCompliant(true)]
 namespace PublicHoliday
 {
     /// <summary>
@@ -539,11 +540,6 @@ namespace PublicHoliday
         /// True if date is a public holiday (excluding weekends)
         /// </returns>
         public override bool IsPublicHoliday(DateTime dt)
-        {
-            return IsPublicHoliday(dt, null);
-        }
-
-        private bool IsPublicHoliday(DateTime dt, DateTime? easter)
         {
             int year = dt.Year;
             var date = dt.Date;

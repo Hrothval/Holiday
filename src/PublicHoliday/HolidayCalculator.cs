@@ -13,7 +13,7 @@ namespace PublicHoliday
     {
 
 #if NETSTANDARD1_0_OR_GREATER || NET40_OR_GREATER || NETCOREAPP1_0_OR_GREATER
-        private static readonly ConcurrentDictionary<int, DateTime> _cache = new ConcurrentDictionary<int, DateTime>();
+        private static readonly ConcurrentDictionary<int, DateTime> _cacheEaster = new ConcurrentDictionary<int, DateTime>();
 #endif
 
         /// <summary>
@@ -24,8 +24,8 @@ namespace PublicHoliday
         public static DateTime GetEaster(int year)
         {
 
-#if NETSTANDARD1_3_OR_GREATER || NET40_OR_GREATER
-            return _cache.GetOrAdd(year, y =>
+#if NETSTANDARD1_0_OR_GREATER || NET40_OR_GREATER || NETCOREAPP1_0_OR_GREATER
+            return _cacheEaster.GetOrAdd(year, y =>
             {
                 return GetEasterPrivate(year);
             });
@@ -225,7 +225,7 @@ namespace PublicHoliday
         {
             if (openDayAdd < 0)
             {
-                throw new ArgumentOutOfRangeException("openDayAdd - negative number");
+                throw new ArgumentOutOfRangeException(nameof(openDayAdd), "openDayAdd - negative number");
             }
 
             dt = dt.Date; //we don't care about time part
@@ -300,7 +300,7 @@ namespace PublicHoliday
 
             if (openDaySubstract < 0)
             {
-                throw new ArgumentOutOfRangeException("openDaySubstract - negative number");
+                throw new ArgumentOutOfRangeException(nameof(openDaySubstract), "openDaySubstract - negative number");
             }
 
             dt = dt.Date; //we don't care about time part
